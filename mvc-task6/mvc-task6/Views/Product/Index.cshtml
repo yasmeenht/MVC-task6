@@ -1,0 +1,53 @@
+﻿@model List<mvc_task6.Models.Product>
+
+<form method="post" asp-action="AddProduct">
+
+    <label for="name">Name</label>
+    <input type="text" name="Name" id="name" />
+    <br />
+
+    <label for="price">Price</label>
+    <input type="number" name="Price" id="price" step="0.01" />
+    <br />
+
+    <label for="quantity">Quantity</label>
+    <input type="number" name="Quantity" id="quantity" />
+    <br />
+
+    <label for="categoryId">Category ID</label>
+    <input type="number" name="CategoryId" id="categoryId" />
+    <br />
+
+    <label for="supplierId">Supplier ID</label>
+    <input type="number" name="SupplierId" id="supplierId" />
+    <br />
+
+    <button type="submit">Submit</button>
+    <br />
+
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category ID</th>
+            <th>Supplier ID</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Quantity</td>
+                <td>@product.CategoryId</td>
+                <td>@product.SupplierId</td>
+            </tr>
+        }
+    </tbody>
+</table>
